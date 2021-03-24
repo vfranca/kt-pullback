@@ -15,3 +15,9 @@ def test_exibe_a_versao():
     res = runner.invoke(cli.cli, ["--version"])
     assert res.output == "kt-pullback 0.2.0\n"
     assert res.exit_code == 0
+
+
+def test_saida_sem_parametros():
+    res = runner.invoke(cli.cli, [])
+    assert res.output == "Usage: pb [OPTIONS] [PRECO_FINAL] [PRECO_INICIAL]\n"
+    res.exit_code == 0

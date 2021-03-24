@@ -15,6 +15,9 @@ def cli(preco_final, preco_inicial, version):
     if version:
         click.echo("kt-pullback %s" % __version__)
         return 0
+    if not preco_final:
+        click.echo("Usage: pb [OPTIONS] [PRECO_FINAL] [PRECO_INICIAL]")
+        return 0
     tamanho = kt_pullback.tamanho_perna(preco_final, preco_inicial)
     metade = kt_pullback.metade_perna(tamanho)
     terco = kt_pullback.terco_perna(tamanho)
