@@ -13,7 +13,7 @@ def test_exibe_retracoes_da_perna():
 
 def test_exibe_a_versao():
     res = runner.invoke(cli.cli, ["--version"])
-    assert res.output == "kt-pullback 0.2.0\n"
+    assert res.output == "kt-pullback 0.2.1\n"
     assert res.exit_code == 0
 
 
